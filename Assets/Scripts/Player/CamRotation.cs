@@ -11,6 +11,7 @@ public class CamRotation : MonoBehaviour
 
     // Variables
     float xRotation = 0f;
+    float yRotation = 0f;
 
     void Start()
     {
@@ -25,10 +26,12 @@ public class CamRotation : MonoBehaviour
         float MouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float MouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
-        xRotation = MouseY * (inverse ? 1 : -1);
+        xRotation += MouseY * (inverse ? 1 : -1);
         xRotation = Mathf.Clamp(xRotation, minAngle, maxAngle);
 
-        transform.Rotate(xRotation, 0f, 0f, Space.Self);
-        transform.Rotate(0f, MouseX, 0f, Space.World);
+        yRotation += MouseX;
+        if (yRotation >= 360f || yRotation <= -360f) yRotation = 0f;
+
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 }

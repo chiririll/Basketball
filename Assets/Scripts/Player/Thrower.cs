@@ -19,7 +19,6 @@ public class Thrower : MonoBehaviour
     {
         ball = Instantiate(ballPrefab);
         ball.transform.position = transform.position + transform.forward + offset;
-        Debug.Log(transform.forward.ToString());
         ballRb = ball.GetComponent<Rigidbody>();
     }
     
