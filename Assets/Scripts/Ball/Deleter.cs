@@ -1,27 +1,33 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ParticleSystem))]
 public class Deleter : MonoBehaviour
 {
     public float deletePosition = 1f;
 
     // Variables
-    bool deleting = false;
+    bool _destroying = false;
+    ParticleSystem _ps;
 
     void Start()
     {
-        
+        _ps = GetComponent<ParticleSystem>();
     }
 
     void Update()
     {
-        if (transform.position.y < deletePosition)
-            deleting = true;
+        if (transform.position.y < deletePosition && !_destroying)
+            Destroy();
 
-        if (deleting)
-            Delete();
+        if (_destroying && !_ps.isPlaying)
+            Destroy(gameObject);
     }
-    void Delete()
+    void Destroy()
     {
-        Destroy(gameObject);
+        _destroying = true;
+        GetComponent<MeshRenderer>().enabled = false;
+        gameObject.isStatic = true;
+
+        _ps.Play();
     }
 }
