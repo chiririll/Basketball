@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5f80f34136a05242823139e6825546c
+guid: cf9779576a871c248a8b2e9af605065c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Back
-    second: {fileID: 2100000, guid: 8dba580eb33f0314491991fd47f34024, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Front
-    second: {fileID: 2100000, guid: 46e65f86a69e9e149a014148b017be4b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hoop
-    second: {fileID: 2100000, guid: b4a53d70f3c3748498b3ece878ff3211, type: 2}
+      name: defaultMat
+    second: {fileID: 2100000, guid: 1680165624c4d824498c765dbbc3a629, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
