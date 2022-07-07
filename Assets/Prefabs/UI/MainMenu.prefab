@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9a72014a92e5a49b03ee6b4fc7f72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
   SelectorObj: {fileID: 4812880960846769303}
 --- !u!114 &4812880958977055552
 MonoBehaviour:
@@ -150,7 +153,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -230,7 +233,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -162.00012}
-  m_SizeDelta: {x: 0, y: 323.99994}
+  m_SizeDelta: {x: 0, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4812880959130916551
 CanvasRenderer:
@@ -454,6 +457,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9a72014a92e5a49b03ee6b4fc7f72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
   SelectorObj: {fileID: 4812880960846769303}
 --- !u!114 &4812880959508188045
 MonoBehaviour:
@@ -815,6 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4812880959954634795}
+  - component: {fileID: 3282829917639424405}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -844,6 +851,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!111 &3282829917639424405
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812880959954634794}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3dde5ee079a391d4eb9dba594c11165a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3dde5ee079a391d4eb9dba594c11165a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4812880959973479911
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3f289ccc862797409fad3c3050496be, type: 2}
   m_sharedMaterial: {fileID: 3217652999215138056, guid: a3f289ccc862797409fad3c3050496be, type: 2}
@@ -1121,6 +1144,7 @@ GameObject:
   - component: {fileID: 4812880960173662122}
   - component: {fileID: 4812880960173662126}
   - component: {fileID: 4812880960173662127}
+  - component: {fileID: 527220566}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1161,6 +1185,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9a72014a92e5a49b03ee6b4fc7f72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 527220566}
+        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
+        m_MethodName: OnItemClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   SelectorObj: {fileID: 4812880960846769303}
 --- !u!114 &4812880960173662127
 MonoBehaviour:
@@ -1202,6 +1241,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &527220566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812880960173662117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4041b0e8ff0e94b8a321aa77515b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4812880960846769303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,7 +1436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: "\u0412\u044B\u0445\u043E\u0434"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3f289ccc862797409fad3c3050496be, type: 2}
   m_sharedMaterial: {fileID: 3217652999215138056, guid: a3f289ccc862797409fad3c3050496be, type: 2}

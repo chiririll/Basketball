@@ -11,14 +11,10 @@ public class CamRotation : MonoBehaviour
 
     // Variables
     float xRotation = 0f;
-    float yRotation = 0f;
 
     void Start()
     {
         xRotation = transform.rotation.x;
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -29,9 +25,7 @@ public class CamRotation : MonoBehaviour
         xRotation += MouseY * (inverse ? 1 : -1);
         xRotation = Mathf.Clamp(xRotation, minAngle, maxAngle);
 
-        yRotation += MouseX;
-        if (yRotation >= 360f || yRotation <= -360f) yRotation = 0f;
-
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.parent.Rotate(Vector3.up * MouseX);
     }
 }
